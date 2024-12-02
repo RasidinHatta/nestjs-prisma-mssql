@@ -17,7 +17,8 @@ model Employee {
   id        Int      @id @default(autoincrement())
   name      String   // Employee name
   email     String   @unique // Unique email address
-  role      String   @default("INTERN") // Limited to specific values via database constraint
+  password  String   // Hashed password
+  role      String   @default("INTERN") // Role (e.g., ADMIN, USER, etc.)
   createdAt DateTime @default(now())  // Timestamp when created
   updatedAt DateTime @updatedAt       // Automatically updated timestamp
 }
