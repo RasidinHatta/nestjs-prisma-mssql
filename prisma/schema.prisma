@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id        Int      @id @default(autoincrement())
+  name      String   // Employee name
+  email     String   @unique // Unique email address
+  role      String   @default("INTERN") // Limited to specific values via database constraint
+  createdAt DateTime @default(now())  // Timestamp when created
+  updatedAt DateTime @updatedAt       // Automatically updated timestamp
+}
+
+
