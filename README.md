@@ -46,12 +46,10 @@ $ pnpm run start:prod
 ```
 
 ## Project Setup after clone
-
+- Change .env.example to .env and fill in the DATABASE_URL environment variable
 ```bash
 # install package
 $ pnpm i
-
-# change .env.example to .env and fill in the DATABASE_URL environment variable
 
 # generate prisma/client
 $ npx prisma generate
