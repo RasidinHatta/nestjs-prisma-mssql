@@ -45,6 +45,45 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
+## Project Setup after clone
+
+```bash
+# install package
+$ pnpm i
+
+# change .env.example to .env and fill in the DATABASE_URL environment variable
+
+# generate prisma/client
+$ npx prisma generate
+
+# start the api
+$ pnpm start:dev
+```
+## Features
+
+- View all employees
+- Add new employees
+- Retrieve a single employee by ID
+- Update an employee's details
+- Delete an employee by ID
+
+---
+
+## API Endpoints
+
+### **Employee Routes**
+
+| Method   | Endpoint               | Description                   |
+|----------|------------------------|-------------------------------|
+| `GET`    | `/api/employees`       | Get a list of all employees   |
+| `POST`   | `/api/employees`       | Add a new employee            |
+| `GET`    | `/api/employees/[id]`  | Get details of a specific employee by ID |
+| `PATCH`  | `/api/employees/[id]`  | Update details of an employee |
+| `DELETE` | `/api/employees/[id]`  | Delete an employee by ID      |
+
+---
+
+
 ## Run tests
 
 ```bash
